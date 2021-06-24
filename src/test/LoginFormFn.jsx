@@ -49,13 +49,13 @@ const LoginFormFn = () => {
 
   return (
     <div className='loginForm-container'>
-      <h1 className=''>Ajax - Node.js in React</h1>
-      <div className='inputs-container'>
+      <h1 className='heading mb-8'>Ajax - Node.js in React</h1>
+      <div className='inputs-container mt-11 mb-5'>
         <label className='label' htmlFor='email'>
           Email:
         </label>
         <Dinput type='text' id='emailField' value={email} onChange={emailHandleChange} />
-        <label className='label' htmlFor='password'>
+        <label className='label mt-5' htmlFor='password'>
           Password:
         </label>
         <Dinput
@@ -64,20 +64,20 @@ const LoginFormFn = () => {
           value={password}
           onChange={passwordHandleChange}
         />
-        <button
-          disabled={!password || !email}
-          className='btn post-button'
-          id='btn-post-data'
-          onClick={postInputData}
-          text-on-hover='Type in your credentials'
-        >
-          <span>Post Data</span>
-        </button>
-        <button className='btn' id='btn-get-data' onClick={getServerData}>
-          <span>Get data</span>
-        </button>
       </div>
-      <div className='displayArea'>
+      <button
+        disabled={!password || !email}
+        className='btn post-button mt-5'
+        id='btn-post-data'
+        onClick={postInputData}
+        text-on-hover='Type in your credentials'
+      >
+        <span className='span-post-btn mt-5'>Post Data</span>
+      </button>
+      <button className='btn mt-2' id='btn-get-data' onClick={getServerData}>
+        <span>Get data</span>
+      </button>
+      <div className='displayArea mt-10'>
         <DtextArea hidden={!txtAreaHidden} readOnly value={showInfo()} />
       </div>
     </div>

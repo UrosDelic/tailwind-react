@@ -17,15 +17,12 @@ body {
 label {
   font-size: 1rem;
   font-weight: bold;
-  margin-top: 0.8em;
-  margin-bottom: 0.8em;
 }
 input {
   width: 46%;
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #96ca3a;
-  margin-bottom: 1em;
 }
 textArea {
   font-weight: bolder;
@@ -38,22 +35,24 @@ textArea {
   max-height: 16.3em;
 }
 button {
-  font-size: 0.8rem;
-  background-color: #96ca3a;
+  padding: 2px !important;
+  font-size: 85% !important;
+  color: #96ca3a !important;
+  background-color: black !important ;
   border-radius: 10px;
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
-  border-color: #96ca3a;
-  width: 30%;
+  border-color: black;
+  width: 35%;
 }
 button:enabled:hover {
-  background-color: black;
-  color: #96ca3a;
+  background-color: #96ca3a !important;
+  color: black !important;
   transition: background-color 0.5s;
 }
 
 button:disabled:hover {
-  background-color: red;
+  background-color: red !important;
   transition: background-color 0.5s;
 }
 
