@@ -11,20 +11,16 @@ const LoginFormFn = () => {
   const [password, setPassword] = useState("");
   const [infoText, setInfoText] = useState("");
   const [txtAreaHidden, setTxtArea] = useState(false);
-  //const [state, setState] = useState({ password: "", email: "" });
 
   const emailHandleChange = (event) => {
     setEmail(event.target.value);
   };
-  // const testHandle = () => {
-  //   setState({ ...state, email: "test" });
-  // };
+
   const passwordHandleChange = (event) => {
     setPassword(event.target.value);
   };
   const getServerData = () => {
     getData.getData().then((response) => {
-      //setState({ ...state, email: response.email });
       setEmail(response.email);
       setPassword(response.password);
       setTxtArea(true);
