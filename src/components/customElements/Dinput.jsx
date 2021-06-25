@@ -8,7 +8,7 @@ class Dinput extends Component {
   render() {
     return (
       <input
-        className='input'
+        className={this.props.className}
         type={this.props.type}
         id={this.props.id}
         value={this.props.value}
