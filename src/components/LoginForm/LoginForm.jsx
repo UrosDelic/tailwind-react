@@ -20,12 +20,15 @@ const LoginForm = () => {
     setPassword(event.target.value);
   };
   const getServerData = () => {
-    getData.getData().then((response) => {
-      setEmail(response.email);
-      setPassword(response.password);
-      setTxtArea(true);
-      setInfoText(`Data for user ${response.email}`);
-    });
+    getData
+      .getData()
+      .then((response) => {
+        setEmail(response.email);
+        setPassword(response.password);
+        setTxtArea(true);
+        setInfoText(`Data for user ${response.email}`);
+      })
+      .catch((error) => console.error(error));
   };
   const postInputData = () => {
     const obj = { email, password };

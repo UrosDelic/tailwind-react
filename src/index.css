@@ -38,6 +38,7 @@ button {
   border-color: black;
   width: 35%;
 }
+
 button:enabled:hover {
   background-color: #96ca3a !important;
   color: black !important;
