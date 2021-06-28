@@ -1,7 +1,7 @@
 import React from "react";
-import LoginFormFn from "./test/LoginFormFn";
+import LoginForm from "./components/LoginForm/LoginForm";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Playground from "./test/Playground";
+import Playground from "./components/Playground/Playground";
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path='/'>
-            <LoginFormFn></LoginFormFn>
+            <LoginForm></LoginForm>
           </Route>
           <Route exact path='/playground'>
             <Playground></Playground>

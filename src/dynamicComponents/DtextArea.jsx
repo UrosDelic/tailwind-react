@@ -1,8 +1,9 @@
-const DtextAreaFn = (props) => {
+const DtextArea = (props) => {
   return (
     <div>
       <textarea
         name='textArea'
+        className={props.className}
         id={props.id}
         value={props.value}
         readOnly={props.readOnly}
@@ -12,4 +13,4 @@ const DtextAreaFn = (props) => {
   );
 };
 
-export default DtextAreaFn;
+export default DtextArea;

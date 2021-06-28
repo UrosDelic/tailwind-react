@@ -1,4 +1,5 @@
-import Dinput from "../components/customElements/Dinput";
+import Dinput from "../../dynamicComponents/Dinput";
+
 const Playground = () => {
   return (
     <div className='playground flex flex-col m-5 w-96	'>

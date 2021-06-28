@@ -1,7 +1,7 @@
 body {
   color: #96ca3a;
   font-family: "Montserrat", sans-serif;
-  background: url("./quantox-logo-bkg.png") no-repeat fixed top;
+  background: url("./quantox-logo-bkg.png") no-repeat fixed;
 }
 
 label {
@@ -9,7 +9,6 @@ label {
   font-weight: bold;
 }
 input {
-  width: 46%;
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #96ca3a;
