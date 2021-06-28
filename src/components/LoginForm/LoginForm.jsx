@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../assets/style.css";
+import "../../index.css";
 import "./LoginForm.css";
 import getData from "../../HttpClient/GetData";
 import Dinput from "../../dynamicComponents/Dinput";
@@ -73,7 +73,7 @@ const LoginForm = () => {
         <div className='flex flex-col items-center md:items-start xl:items-start xl:ml-5 md:ml-5'>
           <button
             disabled={!password || !email}
-            className='post-button mt-5 transition duration-400 transform hover:-translate-y-1 hover:scale-100'
+            className='post-button mt-5 transition duration-500 transform hover:-translate-y-1 hover:scale-100'
             id='btn-post-data'
             onClick={postInputData}
             text-on-hover='Type in your credentials'
