@@ -5,7 +5,7 @@
 body {
   color: #96ca3a;
   font-family: "Montserrat", sans-serif;
-  background: url("./assets/quantox-logo-bkg.png") no-repeat fixed;
+  background: url("./assets/quantox-logo-bkg.png") fixed;
 }
 
 label {
@@ -13,6 +13,8 @@ label {
   font-weight: bold;
 }
 input {
+  max-width: 50vh;
+  min-width: 25vh;
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #96ca3a;
@@ -22,21 +24,20 @@ textArea {
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #96ca3a;
-  width: 47%;
   resize: vertical;
   min-height: 5em;
   max-height: 16.3em;
+  max-width: 50vh;
+  min-width: 25vh;
 }
 button {
   padding: 2px !important;
-  font-size: 85% !important;
   color: #96ca3a !important;
   background-color: black !important ;
   border-radius: 5px;
-  font-weight: bold;
   font-family: "Montserrat", sans-serif;
   border-color: black;
-  width: 35%;
+  box-shadow: 0 0 10px #96ca3a;
 }
 
 button:enabled:hover {

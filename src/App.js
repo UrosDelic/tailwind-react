@@ -2,6 +2,7 @@ import React from "react";
 import LoginForm from "./components/LoginForm/LoginForm";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Playground from "./components/Playground/Playground";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   return (
@@ -13,6 +14,9 @@ const App = () => {
           </Route>
           <Route exact path='/playground'>
             <Playground></Playground>
+          </Route>
+          <Route path='*'>
+            <NotFound></NotFound>
           </Route>
         </Switch>
       </Router>
