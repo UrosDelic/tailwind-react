@@ -33,7 +33,7 @@ const LoginForm = () => {
   const postInputData = () => {
     const obj = { email, password };
     getData
-      .postData(obj)
+      .postLoginData(obj)
       .then((response) => {
         setInfoText(`User ${response.email} is authorized!`);
         setTxtArea(true);

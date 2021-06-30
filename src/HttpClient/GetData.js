@@ -21,6 +21,16 @@ export class GetData {
       console.error(error);
     }
   }
+  async postLoginData(data) {
+    try {
+      const response = await httpRequest.post("http://localhost:8080/post-login-data", data);
+      if (response) {
+        return response;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }
 const getData = new GetData();
 export default getData;
