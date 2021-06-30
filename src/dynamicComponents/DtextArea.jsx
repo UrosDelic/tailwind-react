@@ -1,8 +1,10 @@
+import React from "react";
+
 const DtextArea = (props) => {
   return (
     <div>
       <textarea
-        name='textArea'
+        name="textArea"
         className={props.className}
         id={props.id}
         value={props.value}

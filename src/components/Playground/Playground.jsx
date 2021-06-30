@@ -1,3 +1,5 @@
+import React from "react";
+
 import Dinput from "../../dynamicComponents/Dinput";
 import Navbar from "../Navbar/Navbar";
 // import DtextArea from "../../dynamicComponents/DtextArea";
@@ -36,29 +38,29 @@ const Playground = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className='playground flex flex-col m-5 h-screen items-center'>
-        <label htmlFor=''>First Name:</label>
+      <div className="playground flex flex-col m-5 h-screen items-center">
+        <label htmlFor="">First Name:</label>
         <Dinput
-          className='firstname-input mb-5 w-1/5'
-          id='firstName'
+          className="firstname-input mb-5 w-1/5"
+          id="firstName"
           value={firstName}
           onChange={firstNameHandleChange}
         ></Dinput>
-        <label htmlFor=''>Last Name:</label>
+        <label htmlFor="">Last Name:</label>
         <Dinput
-          className='lastname-input mb-5 w-1/5'
-          id='lastName'
+          className="lastname-input mb-5 w-1/5"
+          id="lastName"
           value={lastName}
           onChange={lastNameHandleChange}
         ></Dinput>
-        <label htmlFor=''>Address:</label>
+        <label htmlFor="">Address:</label>
         <Dinput
-          className='address-input mb-5 w-1/5'
-          id='address'
+          className="address-input mb-5 w-1/5"
+          id="address"
           value={address}
           onChange={addressHandleChange}
         ></Dinput>
-        <button className='w-1/2' onClick={postInputData}>
+        <button className="w-1/2" onClick={postInputData}>
           submit
         </button>
         {/* <label className='mt-5'>text area</label>
