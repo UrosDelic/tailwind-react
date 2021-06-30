@@ -14,7 +14,7 @@ label {
 }
 input {
   max-width: 50vh;
-  min-width: 25vh;
+  /* min-width: 20vh; */
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #96ca3a;
@@ -27,7 +27,7 @@ textArea {
   resize: vertical;
   min-height: 5em;
   max-height: 16.3em;
-  max-width: 50vh;
+  /* max-width: 50vh; */
   min-width: 25vh;
 }
 button {

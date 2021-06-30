@@ -50,13 +50,15 @@ const LoginForm = () => {
     <div className='playground-container'>
       <Navbar></Navbar>
       <div className='loginForm-container p-3 w-2/3 md:w-1/2 xl:w-1/4'>
-        <h1 className='heading text-center md:text-left mb-8'>Ajax - Node.js in React</h1>
-        <div className='inputs-container items-center md:items-start xl:items-start md:ml-5 mt-20 mb-5 flex flex-col xl:ml-5'>
+        <h1 className='heading text-center md:text-left mb-2 md:mb-8 xl:mb-8'>
+          Ajax - Node.js in React
+        </h1>
+        <div className='inputs-container items-center md:items-start xl:items-start md:ml-5 mt-5 md:mt-20 xl:mt-20 mb-5 flex flex-col xl:ml-5'>
           <label className='label mb-1' htmlFor='email'>
             Email:
           </label>
           <Dinput
-            className='w-1/2 md:w-2/5 xl:w-2/5'
+            className='w-1/2'
             type='text'
             id='emailField'
             value={email}
@@ -66,7 +68,7 @@ const LoginForm = () => {
             Password:
           </label>
           <Dinput
-            className='w-1/2 md:w-2/5 xl:w-2/5'
+            className='w-1/2'
             type='password'
             id='passwordField'
             value={password}

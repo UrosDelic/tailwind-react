@@ -39,21 +39,21 @@ const Playground = () => {
       <div className='playground flex flex-col m-5 h-screen items-center'>
         <label htmlFor=''>First Name:</label>
         <Dinput
-          className='firstname-input mb-5 w-5'
+          className='firstname-input mb-5 w-1/5'
           id='firstName'
           value={firstName}
           onChange={firstNameHandleChange}
         ></Dinput>
         <label htmlFor=''>Last Name:</label>
         <Dinput
-          className='lastname-input mb-5 w-5'
+          className='lastname-input mb-5 w-1/5'
           id='lastName'
           value={lastName}
           onChange={lastNameHandleChange}
         ></Dinput>
         <label htmlFor=''>Address:</label>
         <Dinput
-          className='address-input mb-5 w-5'
+          className='address-input mb-5 w-1/5'
           id='address'
           value={address}
           onChange={addressHandleChange}
