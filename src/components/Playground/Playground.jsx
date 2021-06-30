@@ -1,8 +1,6 @@
 import React from "react";
-
 import Dinput from "../../dynamicComponents/Dinput";
 import Navbar from "../Navbar/Navbar";
-// import DtextArea from "../../dynamicComponents/DtextArea";
 import { useState } from "react";
 import getData from "../../HttpClient/GetData";
 
