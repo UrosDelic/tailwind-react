@@ -47,7 +47,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
+    <div className='playground-container'>
       <Navbar></Navbar>
       <div className='loginForm-container p-3 w-2/3 md:w-1/2 xl:w-1/4'>
         <h1 className='heading text-center md:text-left mb-8'>Ajax - Node.js in React</h1>
@@ -84,7 +84,7 @@ const LoginForm = () => {
             <span className='span-post-btn mt-5'>Post Data</span>
           </button>
           <button
-            className='mt-2 transition duration-500 transform hover:scale-100 w-2/5 font-b'
+            className='mt-2 transition duration-500 transform hover:scale-100 w-2/5 font-bold'
             id='btn-get-data'
             onClick={getServerData}
           >

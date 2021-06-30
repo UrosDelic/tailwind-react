@@ -38,6 +38,7 @@ button {
   font-family: "Montserrat", sans-serif;
   border-color: black;
   box-shadow: 0 0 10px #96ca3a;
+  max-width: 10rem;
 }
 
 button:enabled:hover {

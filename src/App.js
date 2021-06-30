@@ -15,6 +15,9 @@ const App = () => {
           <Route exact path='/playground'>
             <Playground></Playground>
           </Route>
+          <Route path='/playground/:id'>
+            <Playground></Playground>
+          </Route>
           <Route path='*'>
             <NotFound></NotFound>
           </Route>
