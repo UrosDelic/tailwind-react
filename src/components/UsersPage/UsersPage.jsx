@@ -1,10 +1,10 @@
+import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 const UsersPage = () => {
   const [responseData, setResponseData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  //   const [error, setError] = useState(null);
   useEffect(() => {
     getUsersData();
   }, []);
@@ -17,20 +17,25 @@ const UsersPage = () => {
         setResponseData(response.data.data);
       })
       .catch((error) => {
-        // setIsLoaded(true);
-        // setError(error);
+        console.error(error);
       });
   };
 
   return (
-    <div className='usersPage-container'>
-      <h1 className='heading'>Users Page</h1>
+    <div className="usersPage-container">
+      <h1 className="heading">Users Page</h1>
       <div>
-        <ul className='w-screen h-screen'>
+        <ul className="w-screen h-screen">
           {!isLoaded ? (
             <p>Loading</p>
           ) : (
-            responseData.map((user) => <li key={user.id}>{user.email}</li>)
+            responseData.map((user) => (
+              <div className="user-box flex flex-row" key={user.id}>
+                <p className="p-1">{user.first_name} </p>
+                <p className="p-1">{user.last_name}</p>
+                {/* POGLEDAJ PRIMER NA REGRES.IN */}
+              </div>
+            ))
           )}
         </ul>
       </div>
