@@ -57,7 +57,7 @@ const Playground = () => {
             value={password}
             onChange={signupPasswordHandleChange}
           ></Dinput>
-          <label htmlFor=''>Repeat password:</label>
+          <label htmlFor=''>Confirm password:</label>
           <Dinput
             className='signup-repeat-password mb-5'
             id='signupRepeatPassword'
@@ -67,7 +67,7 @@ const Playground = () => {
           ></Dinput>
           <button
             disabled={!password || !repeatPassword || password !== repeatPassword}
-            className='signup-button w-2/3 font-bold'
+            className='signup-button w-2/3 font-bold md:mt-2 xl:mt-2'
             onClick={postInputData}
           >
             Sign Up

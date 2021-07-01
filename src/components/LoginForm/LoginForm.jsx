@@ -2,11 +2,10 @@ import React from "react";
 import { useState } from "react";
 import "../../index.css";
 import "./LoginForm.css";
-// import getData from "../../HttpClient/GetData";
 import Dinput from "../../dynamicComponents/Dinput";
 import DtextArea from "../../dynamicComponents/DtextArea";
 import Navbar from "../Navbar/Navbar";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 
 const LoginForm = () => {
@@ -14,6 +13,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [infoText, setInfoText] = useState("");
   const [txtAreaHidden, setTxtArea] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const emailHandleChange = (event) => {
     setEmail(event.target.value);
@@ -22,49 +22,21 @@ const LoginForm = () => {
   const passwordHandleChange = (event) => {
     setPassword(event.target.value);
   };
-  // const getServerData = () => {
-  //   getData
-  //     .getData()
-  //     .then((response) => {
-  //       setEmail(response.email);
-  //       setPassword(response.password);
-  //       setTxtArea(true);
-  //       setInfoText(`Data for user ${response.email}`);
-  //     })
-  //     .catch((error) => console.error(error));
-  // };
+
   const postInputData = () => {
     const obj = { email, password };
     axios
       .post("https://reqres.in/api/login", obj)
       .then((response) => {
-        if (response === undefined) {
-          setTxtArea(true);
-          setInfoText("log in failed!");
-        } else {
-          setTxtArea(true);
-          setInfoText("Success!");
-        }
+        setTxtArea(true);
+        setInfoText("Success!");
+        setLoggedIn(true);
       })
       .catch((error) => {
+        setTxtArea(true);
         setInfoText("log in failed!");
         console.error(error);
       });
-    // getData
-    //   .postLoginData(obj)
-    //   .then((response) => {
-    //     if (response === undefined) {
-    //       setTxtArea(true);
-    //       setInfoText("log in failed!");
-    //     } else {
-    //       setTxtArea(true);
-    //       setInfoText("Success!");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     setInfoText("log in failed!");
-    //     console.error(error);
-    //   });
   };
   const showInfo = () => {
     if (infoText === "") {
@@ -121,6 +93,7 @@ const LoginForm = () => {
           >
             <span className='span-post-btn mt-5'>Log In</span>
           </button>
+          {loggedIn ? <Redirect to='/usersPage' /> : null}
         </div>
 
         <div className='displayArea mt-10 xl:ml-5 md:ml-5 text-center md:text-left xl:text-left'>
