@@ -13,7 +13,7 @@ export class GetData {
   }
   async postData(data) {
     try {
-      const response = await httpRequest.post("http://localhost:8080/post-signup-data", data);
+      const response = await httpRequest.post("http://localhost:8080/signup", data);
       if (response) {
         return response;
       }
@@ -23,7 +23,7 @@ export class GetData {
   }
   async postLoginData(data) {
     try {
-      const response = await httpRequest.post("http://localhost:8080/post-login-data", data);
+      const response = await httpRequest.post("http://localhost:8080/login", data);
       if (response) {
         return response;
       }

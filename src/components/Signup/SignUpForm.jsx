@@ -36,33 +36,39 @@ const Playground = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className='signup flex flex-col m-5 h-screen items-center'>
-        <label htmlFor=''>Email:</label>
-        <Dinput
-          className='signup-email-input mb-5 w-1/5'
-          id='signupEmail'
-          value={email}
-          onChange={signupEmailHandleChange}
-        ></Dinput>
-        <label htmlFor=''>Password:</label>
-        <Dinput
-          className='signup-password-input mb-5 w-1/5'
-          id='signupPassword'
-          value={password}
-          onChange={signupPasswordHandleChange}
-        ></Dinput>
-        <label htmlFor=''>Repeat password:</label>
-        <Dinput
-          className='signup-repeat-password mb-5 w-1/5'
-          id='signupRepeatPassword'
-          value={repeatPassword}
-          onChange={repeatPasswordHandleChange}
-        ></Dinput>
-        <button className='w-1/2' onClick={postInputData}>
-          submit
-        </button>
-        {/* <label className='mt-5'>text area</label>
-        <DtextArea></DtextArea> */}
+      <div className='signup flex justify-center mt-20'>
+        <div className='flex flex-col w-1/6'>
+          <label htmlFor=''>Email:</label>
+          <Dinput
+            className='signup-email-input mb-5'
+            id='signupEmail'
+            value={email}
+            onChange={signupEmailHandleChange}
+          ></Dinput>
+          <label htmlFor=''>Password:</label>
+          <Dinput
+            className='signup-password-input mb-5 '
+            id='signupPassword'
+            type='password'
+            value={password}
+            onChange={signupPasswordHandleChange}
+          ></Dinput>
+          <label htmlFor=''>Repeat password:</label>
+          <Dinput
+            className='signup-repeat-password mb-5'
+            id='signupRepeatPassword'
+            type='password'
+            value={repeatPassword}
+            onChange={repeatPasswordHandleChange}
+          ></Dinput>
+          <button
+            disabled={!password || !repeatPassword || password !== repeatPassword}
+            className='w-1/2'
+            onClick={postInputData}
+          >
+            submit
+          </button>
+        </div>
       </div>
     </div>
   );

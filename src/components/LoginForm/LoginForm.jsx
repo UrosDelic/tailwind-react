@@ -61,7 +61,7 @@ const LoginForm = () => {
             Email:
           </label>
           <Dinput
-            className='w-1/2'
+            className='w-2/3 md:w-1/2 xl:w-1/2'
             type='text'
             id='emailField'
             value={email}
@@ -71,7 +71,7 @@ const LoginForm = () => {
             Password:
           </label>
           <Dinput
-            className='w-1/2'
+            className='w-2/3 md:w-1/2 xl:w-1/2'
             type='password'
             id='passwordField'
             value={password}
@@ -80,9 +80,9 @@ const LoginForm = () => {
         </div>
         <div className='flex flex-col items-center md:items-start xl:items-start xl:ml-5 md:ml-5'>
           <div className='signup-label'>
-            <Link to='/signup'>
+            <Link to='/signup' className=''>
               <label
-                className='italic hover:underline cursor-pointer font-extralight'
+                className='italic hover:underline cursor-pointer font-extralight text-xs md:text-sm'
                 htmlFor='signup'
               >
                 Don't have an account? Sign up!
