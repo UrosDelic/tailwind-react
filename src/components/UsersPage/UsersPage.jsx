@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 
 const UsersPage = () => {
   const [responseData, setResponseData] = useState([]);
-
+  const [isLoaded, setIsLoaded] = useState(false);
+  //   const [error, setError] = useState(null);
   useEffect(() => {
     getUsersData();
   }, []);
@@ -12,23 +13,25 @@ const UsersPage = () => {
     axios
       .get("https://reqres.in/api/users?page=2")
       .then((response) => {
+        setIsLoaded(true);
         setResponseData(response.data.data);
       })
       .catch((error) => {
-        console.error(error);
+        // setIsLoaded(true);
+        // setError(error);
       });
   };
 
   return (
     <div className='usersPage-container'>
-      <h1 className=''>Users Page</h1>
+      <h1 className='heading'>Users Page</h1>
       <div>
-        <ul>
-          {responseData.forEach((data) => {
-            <li key={data.id}>{data.first_name}</li>;
-            console.log(data.id);
-            console.log(data.first_name);
-          })}
+        <ul className='w-screen h-screen'>
+          {!isLoaded ? (
+            <p>Loading</p>
+          ) : (
+            responseData.map((user) => <li key={user.id}>{user.email}</li>)
+          )}
         </ul>
       </div>
     </div>
