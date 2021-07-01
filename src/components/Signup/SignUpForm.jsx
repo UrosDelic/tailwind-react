@@ -36,6 +36,9 @@ const Playground = () => {
   return (
     <div>
       <Navbar></Navbar>
+      <div className='heading-container text-center mt-20'>
+        <h2 className='heading italic mb-2 md:mb-8 xl:mb-8'>Sign Up</h2>
+      </div>
       <div className='signup flex justify-center mt-20'>
         <div className='flex flex-col w-1/6'>
           <label htmlFor=''>Email:</label>
