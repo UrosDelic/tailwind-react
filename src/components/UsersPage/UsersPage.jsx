@@ -2,7 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const UsersPage = () => {
-  const [firstName, setFirstname] = useState([]);
   const [responseData, setResponseData] = useState([]);
 
   useEffect(() => {
@@ -14,7 +13,6 @@ const UsersPage = () => {
       .get("https://reqres.in/api/users?page=2")
       .then((response) => {
         setResponseData(response.data.data);
-        setFirstname();
       })
       .catch((error) => {
         console.error(error);
