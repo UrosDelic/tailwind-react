@@ -40,7 +40,7 @@ const Playground = () => {
         <h2 className='heading italic mb-2 md:mb-8 xl:mb-8'>Sign Up</h2>
       </div>
       <div className='signup flex justify-center mt-20'>
-        <div className='flex flex-col w-1/6'>
+        <div className='flex flex-col md:w-2/7 xl:w-1/5'>
           <label htmlFor=''>Email:</label>
           <Dinput
             className='signup-email-input mb-5'
@@ -66,10 +66,10 @@ const Playground = () => {
           ></Dinput>
           <button
             disabled={!password || !repeatPassword || password !== repeatPassword}
-            className='w-1/2'
+            className='w-2/3'
             onClick={postInputData}
           >
-            submit
+            Sign Up
           </button>
         </div>
       </div>

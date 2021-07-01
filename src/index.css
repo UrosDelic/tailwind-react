@@ -13,7 +13,7 @@ label {
   font-weight: bold;
 }
 input {
-  max-width: 50vh;
+  /* max-width:%; */
   /* min-width: 20vh; */
   background: transparent;
   border: 0px;
