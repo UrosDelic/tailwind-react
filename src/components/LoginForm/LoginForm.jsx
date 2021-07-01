@@ -2,11 +2,12 @@ import React from "react";
 import { useState } from "react";
 import "../../index.css";
 import "./LoginForm.css";
-import getData from "../../HttpClient/GetData";
+// import getData from "../../HttpClient/GetData";
 import Dinput from "../../dynamicComponents/Dinput";
 import DtextArea from "../../dynamicComponents/DtextArea";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -34,14 +35,36 @@ const LoginForm = () => {
   // };
   const postInputData = () => {
     const obj = { email, password };
-    getData
-      .postLoginData(obj)
+    axios
+      .post("https://reqres.in/api/login", obj)
       .then((response) => {
-        console.log(response, "response post");
-        setInfoText(`User ${response.email} is authorized!`);
-        setTxtArea(true);
+        if (response === undefined) {
+          setTxtArea(true);
+          setInfoText("log in failed!");
+        } else {
+          setTxtArea(true);
+          setInfoText("Success!");
+        }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        setInfoText("log in failed!");
+        console.error(error);
+      });
+    // getData
+    //   .postLoginData(obj)
+    //   .then((response) => {
+    //     if (response === undefined) {
+    //       setTxtArea(true);
+    //       setInfoText("log in failed!");
+    //     } else {
+    //       setTxtArea(true);
+    //       setInfoText("Success!");
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     setInfoText("log in failed!");
+    //     console.error(error);
+    //   });
   };
   const showInfo = () => {
     if (infoText === "") {

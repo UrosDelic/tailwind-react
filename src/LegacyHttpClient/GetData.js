@@ -23,7 +23,7 @@ export class GetData {
   }
   async postLoginData(data) {
     try {
-      const response = await httpRequest.post("http://localhost:8080/login", data);
+      const response = await httpRequest.post("https://reqres.in/api/login", data);
       if (response) {
         return response;
       }

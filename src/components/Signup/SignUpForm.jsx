@@ -2,7 +2,8 @@ import React from "react";
 import Dinput from "../../dynamicComponents/Dinput";
 import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
-import getData from "../../HttpClient/GetData";
+// import getData from "../../LegacyHttpClient/GetData";
+import axios from "axios";
 
 const Playground = () => {
   const [email, setEmail] = useState("");
@@ -22,9 +23,9 @@ const Playground = () => {
   };
 
   const postInputData = () => {
-    const obj = { email, password, repeatPassword };
-    getData
-      .postData(obj)
+    const obj = { email, password };
+    axios
+      .post("https://reqres.in/api/register", obj)
       .then((response) => {
         console.log(response);
       })
@@ -66,7 +67,7 @@ const Playground = () => {
           ></Dinput>
           <button
             disabled={!password || !repeatPassword || password !== repeatPassword}
-            className='w-2/3'
+            className='signup-button w-2/3 font-bold'
             onClick={postInputData}
           >
             Sign Up

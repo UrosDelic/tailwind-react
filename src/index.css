@@ -49,6 +49,10 @@ button:enabled:hover {
 button:disabled:hover {
   background-color: red !important;
 }
+.signup-button:disabled {
+  color: white !important;
+  background-color: red !important;
+}
 
 button:disabled:hover::before {
   content: attr(text-on-hover);
