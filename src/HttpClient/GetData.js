@@ -13,7 +13,7 @@ export class GetData {
   }
   async postData(data) {
     try {
-      const response = await httpRequest.post("http://localhost:8080/post-data", data);
+      const response = await httpRequest.post("http://localhost:8080/post-signup-data", data);
       if (response) {
         return response;
       }

@@ -23,6 +23,7 @@ class HttpRequest {
 
       http.onload = () => {
         if (http.status >= 200 && http.status < 300) {
+          // resolve(http.response);
           http.response !== "" ? resolve(JSON.parse(http.response)) : resolve(http.response);
         } else {
           reject(http.statusText);

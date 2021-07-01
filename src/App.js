@@ -1,9 +1,8 @@
 import React from "react";
 import LoginForm from "./components/LoginForm/LoginForm";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Playground from "./components/Playground/Playground";
 import NotFound from "./components/NotFound";
-
+import SignUpForm from "./components/Signup/SignUpForm.jsx";
 const App = () => {
   return (
     <div>
@@ -12,11 +11,11 @@ const App = () => {
           <Route exact path='/'>
             <LoginForm></LoginForm>
           </Route>
-          <Route exact path='/playground'>
-            <Playground></Playground>
+          <Route exact path='/signup'>
+            <SignUpForm></SignUpForm>
           </Route>
-          <Route path='/playground/:id'>
-            <Playground></Playground>
+          <Route path='/signup/:id'>
+            <SignUpForm></SignUpForm>
           </Route>
           <Route path='*'>
             <NotFound></NotFound>
