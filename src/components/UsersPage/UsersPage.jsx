@@ -21,11 +21,15 @@ const UsersPage = () => {
 
   return (
     <div className='usersPage-container'>
-      <h1 className=''></h1>
+      <h1 className=''>Users Page</h1>
       <div>
-        {responseData.forEach((el) => {
-          console.log(el.first_name);
-        })}
+        <ul>
+          {responseData.forEach((data) => {
+            <li key={data.id}>{data.first_name}</li>;
+            console.log(data.id);
+            console.log(data.first_name);
+          })}
+        </ul>
       </div>
     </div>
   );
