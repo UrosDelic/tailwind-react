@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import useAxios from "../AxiosCustomHook/useAxios";
+import useAxiosGet from "../AxiosCustomHook/useAxios";
 
 const SingleUserPage = () => {
   const { id } = useParams();
-  const { responseData } = useAxios(`https://reqres.in/api/users/${id}`);
+  const { responseData } = useAxiosGet(`https://reqres.in/api/users/${id}`);
 
   return (
     <div className='UserPage flex justify-center mt-20'>

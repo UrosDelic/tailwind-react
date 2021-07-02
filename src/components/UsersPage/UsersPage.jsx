@@ -1,10 +1,10 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
-import useAxios from "../AxiosCustomHook/useAxios";
+import useAxiosGet from "../AxiosCustomHook/useAxios";
 
 const UsersPage = () => {
-  const { responseData, isLoading } = useAxios("https://reqres.in/api/users/");
+  const { responseData, isLoading } = useAxiosGet("https://reqres.in/api/users/");
 
   return (
     <div className='usersPage-container'>
