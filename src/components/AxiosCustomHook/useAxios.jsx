@@ -6,7 +6,7 @@ const useAxios = (url) => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(null);
 
-  const getData = () => {
+  useEffect(() => {
     axios
       .get(url)
       .then((response) => {
@@ -19,10 +19,6 @@ const useAxios = (url) => {
         setIsLoading(true);
         setError(error);
       });
-  };
-
-  useEffect(() => {
-    getData();
   }, [url]);
 
   return { responseData, error, isLoading };

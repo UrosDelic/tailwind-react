@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import SignUpForm from "./components/Signup/SignUpForm.jsx";
 import UsersPage from "./components/UsersPage/UsersPage";
-import UserPage from "./components/UserPage/UserPage";
+import SingleUserPage from "./components/UserPage/SingleUserPage";
 const App = () => {
   return (
     <div>
@@ -17,7 +17,7 @@ const App = () => {
             <UsersPage></UsersPage>
           </Route>
           <Route path='/users/:id'>
-            <UserPage></UserPage>
+            <SingleUserPage></SingleUserPage>
           </Route>
           <Route exact path='/signup'>
             <SignUpForm></SignUpForm>
