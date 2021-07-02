@@ -31,7 +31,10 @@ const UsersPage = () => {
             <div></div>
           ) : (
             responseData.map((person) => (
-              <Link>
+              <Link
+                to={`/userPage/${person.id}`}
+                className='user-hover-box transform hover:bg-gray-700'
+              >
                 <div className='user-box flex flex-col m-10' key={person.id}>
                   <div className='image-wrapper'>
                     <img className='w-' key={person.avatar} src={person.avatar} alt='' />
