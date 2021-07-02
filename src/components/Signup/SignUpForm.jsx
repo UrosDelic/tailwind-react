@@ -2,8 +2,7 @@ import React from "react";
 import Dinput from "../../dynamicComponents/Dinput";
 import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
-// import getData from "../../LegacyHttpClient/GetData";
-import axios from "axios";
+import getData from "../AxiosClient/GetData";
 
 const Playground = () => {
   const [email, setEmail] = useState("");
@@ -24,8 +23,8 @@ const Playground = () => {
 
   const postInputData = () => {
     const obj = { email, password };
-    axios
-      .post("https://reqres.in/api/register", obj)
+    getData
+      .postRegisterData(obj)
       .then((response) => {
         console.log(response);
       })

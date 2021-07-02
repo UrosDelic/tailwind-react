@@ -6,7 +6,7 @@ import Dinput from "../../dynamicComponents/Dinput";
 import DtextArea from "../../dynamicComponents/DtextArea";
 import Navbar from "../Navbar/Navbar";
 import { Link, Redirect } from "react-router-dom";
-import axios from "axios";
+import getData from "../AxiosClient/GetData";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -25,8 +25,8 @@ const LoginForm = () => {
 
   const postInputData = () => {
     const obj = { email, password };
-    axios
-      .post("https://reqres.in/api/login", obj)
+    getData
+      .postLoginData(obj)
       .then((response) => {
         setTxtArea(true);
         setInfoText("Success!");
