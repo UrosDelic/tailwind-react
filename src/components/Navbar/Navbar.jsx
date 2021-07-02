@@ -11,7 +11,7 @@ const Navbar = () => {
       <Link className='link' to='/signup'>
         <span className='ml-3 hover:underline font-bold hover:text-gray-400'>Sign Up</span>
       </Link>
-      <Link className='link ml-3' to='/usersPage'>
+      <Link className='link ml-3' to='/users'>
         Users Page
       </Link>
     </div>

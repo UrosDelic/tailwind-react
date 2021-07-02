@@ -13,10 +13,10 @@ const App = () => {
           <Route exact path='/'>
             <LoginForm></LoginForm>
           </Route>
-          <Route exact path='/usersPage'>
+          <Route exact path='/users'>
             <UsersPage></UsersPage>
           </Route>
-          <Route path='/userPage/:id'>
+          <Route path='/users/:id'>
             <UserPage></UserPage>
           </Route>
           <Route exact path='/signup'>

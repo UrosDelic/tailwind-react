@@ -1,9 +1,20 @@
 import axios from "axios";
 
 class GetData {
-  async getData() {
+  async getUserData(id) {
     try {
-      const response = await axios.get("https://reqres.in/api/users?page=2");
+      const response = await axios.get(`https://reqres.in/api/users/${id}`);
+      if (response) {
+        return response;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async getUsersData() {
+    try {
+      const response = await axios.get("https://reqres.in/api/users/");
       if (response) {
         return response;
       }

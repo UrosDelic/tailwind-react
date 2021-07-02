@@ -14,7 +14,6 @@ const LoginForm = () => {
   const [infoText, setInfoText] = useState("");
   const [txtAreaHidden, setTxtArea] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-
   const emailHandleChange = (event) => {
     setEmail(event.target.value);
   };
@@ -93,7 +92,7 @@ const LoginForm = () => {
           >
             <span className='span-post-btn mt-5'>Log In</span>
           </button>
-          {loggedIn ? <Redirect to='/usersPage' /> : null}
+          {loggedIn ? <Redirect to='/users' /> : null}
         </div>
 
         <div className='displayArea mt-10 xl:ml-5 md:ml-5 text-center md:text-left xl:text-left'>

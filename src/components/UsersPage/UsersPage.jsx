@@ -1,38 +1,23 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import getData from "../AxiosClient/GetData";
+
 import { Link } from "react-router-dom";
+import useAxios from "../AxiosCustomHook/useAxios";
 
 const UsersPage = () => {
-  const [responseData, setResponseData] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
-  useEffect(() => {
-    getUsersData();
-  }, []);
-
-  const getUsersData = () => {
-    getData
-      .getData()
-      .then((response) => {
-        setIsLoaded(true);
-        setResponseData(response.data.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+  const { responseData, isLoading } = useAxios("https://reqres.in/api/users/");
 
   return (
     <div className='usersPage-container'>
-      <h1 className='heading'>Users Page</h1>
+      <h1 className='heading text-center mb-10'>Users</h1>
       <div>
         <div className='flex flex-col md:flex-row xl:flex-row justify-center items-center'>
-          {!isLoaded ? (
-            <div></div>
+          {!isLoading ? (
+            <div>LOADING...</div>
           ) : (
             responseData.map((person) => (
               <Link
-                to={`/userPage/${person.id}`}
+                key={person.id}
+                to={`/users/${person.id}`}
                 className='user-hover-box transform hover:bg-gray-700'
               >
                 <div className='user-box flex flex-col m-10' key={person.id}>
