@@ -5,11 +5,14 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className='navbar-component p-5 flex flex-row justify-center'>
-      <Link className='link mr-6' to='/'>
-        <span className='mr-1 hover:underline hover:text-gray-400 font-bold'>Home</span>
+      <Link className='link' to='/'>
+        <span className='hover:underline hover:text-gray-400 font-bold'>Home</span>
       </Link>
       <Link className='link' to='/signup'>
-        <span className='mr-1 hover:underline font-bold hover:text-gray-400'>Sign Up</span>
+        <span className='ml-3 hover:underline font-bold hover:text-gray-400'>Sign Up</span>
+      </Link>
+      <Link className='link ml-3' to='/usersPage'>
+        Users Page
       </Link>
     </div>
   );
