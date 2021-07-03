@@ -8,7 +8,7 @@ class GetData {
         return response;
       }
     } catch (error) {
-      console.error(error);
+      console.log(error, 'getData from getData.js');
     }
   }
 
@@ -19,7 +19,7 @@ class GetData {
         return response;
       }
     } catch (error) {
-      console.error(error);
+      console.log(error, "getUsersData from getData.js");
     }
   }
   async postRegisterData(data) {
@@ -29,7 +29,7 @@ class GetData {
         return response;
       }
     } catch (error) {
-      console.error(error);
+      console.log(error, "postRegisterData method");
     }
   }
   async postLoginData(data) {
@@ -39,7 +39,7 @@ class GetData {
         return response;
       }
     } catch (error) {
-      console.error(error);
+      console.log(error, 'postLoginData');
     }
   }
 }
