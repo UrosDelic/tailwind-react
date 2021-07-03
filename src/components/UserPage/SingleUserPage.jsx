@@ -8,7 +8,7 @@ const SingleUserPage = () => {
   console.log(responseData, "single user");
   if (responseData.length < 1) {
     return (
-      <h1 className="w-screen h-screen heading text-center mt-20">User by id - {id} is missing</h1>
+      <p className="w-screen h-screen text-3xl text-center mt-20">User by ID - {id} is missing</p>
     );
   } else
     return (

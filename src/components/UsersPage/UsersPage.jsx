@@ -8,7 +8,7 @@ const UsersPage = () => {
 
   return (
     <div className="usersPage-container">
-      <h1 className="heading text-center mb-10">Users</h1>
+      <p className="heading text-center mb-10 mt-2 text-2xl">Users:</p>
       <div>
         <div className="flex flex-col md:flex-row xl:flex-row justify-center items-center">
           {!isLoading ? (
