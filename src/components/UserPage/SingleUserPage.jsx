@@ -5,7 +5,7 @@ import useAxiosGet from "../AxiosCustomHook/useAxios";
 const SingleUserPage = () => {
   const { id } = useParams();
   const { responseData } = useAxiosGet(`https://reqres.in/api/users/${id}`);
-  console.log(responseData, "single user");
+  // console.log(responseData, "single user");
   if (responseData.length < 1) {
     return (
       <p className="w-screen h-screen text-3xl text-center mt-20">User by ID - {id} is missing</p>

@@ -16,7 +16,7 @@ const useAxiosGet = (url) => {
       })
       .catch((error) => {
         console.error("axios error", error);
-        setIsLoading(true);
+        setIsLoading(false);
         setError(error);
       });
   }, [url]);

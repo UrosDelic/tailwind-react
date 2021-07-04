@@ -5,9 +5,10 @@ import "./LoginForm.css";
 import Dinput from "../../dynamicComponents/Dinput";
 import Navbar from "../Navbar/Navbar";
 import { Link, Redirect } from "react-router-dom";
-import getData from "../AxiosClient/GetData";
+import getData from "../../AxiosClient/GetData";
+import auth from "../protectedRoute/Auth.js";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [infoText, setInfoText] = useState("");
@@ -27,13 +28,18 @@ const LoginForm = () => {
         if (response.status < 300) {
           setInfoText("Success!");
           setLoggedIn(true);
+          // auth.login(() => {
+          //   props.history.push("/testPage");
+          // });
         }
       })
       .catch((error) => {
         setInfoText("log in failed!");
         console.log(error);
+        setLoggedIn(false);
       });
   };
+
   // const showInfo = () => {
   //   if (infoText === "") {
   //     return ``;
@@ -87,9 +93,13 @@ const LoginForm = () => {
             onClick={postInputData}
             text-on-hover="Type in your credentials"
           >
-            {loggedIn ? <Redirect to="/users" /> : null}
             <span className="span-post-btn mt-5">Log In</span>
+            {loggedIn ? <Redirect to="/users" /> : null}
           </button>
+          <button onClick={postInputData} className="m-5">
+            test submit
+          </button>
+
           <p className={!loggedIn ? "text-red-500 mt-3 italic" : "text-green-500 mt-3 italic"}>
             {infoText}
           </p>
