@@ -57,7 +57,7 @@ const LoginForm = () => {
             Email:
           </label>
           <Dinput
-            className='w-2/3 md:w-1/2 xl:w-1/2'
+            className='w-2/3 md:w-1/2 xl:w-3/5'
             type='text'
             id='emailField'
             value={email}
@@ -67,7 +67,7 @@ const LoginForm = () => {
             Password:
           </label>
           <Dinput
-            className='w-2/3 md:w-1/2 xl:w-1/2'
+            className='w-2/3 md:w-1/2 xl:w-3/5'
             type='password'
             id='passwordField'
             value={password}

@@ -10,7 +10,6 @@ const useAxiosGet = (url) => {
     axios
       .get(url)
       .then((response) => {
-        console.log("axios hook", response.data.data);
         setResponse(response.data.data);
         setIsLoading(true);
       })
