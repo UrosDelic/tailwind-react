@@ -11,18 +11,18 @@ const SingleUserPage = () => {
   }
   if (responseData.length < 1) {
     return (
-      <p className='w-screen h-screen text-3xl text-center mt-20'>User by ID - {id} is missing</p>
+      <p className="w-screen h-screen text-3xl text-center mt-20">User by ID - {id} is missing</p>
     );
   } else
     return (
-      <div className='UserPage flex justify-center mt-20'>
-        <div className='user-box'>
+      <div className="UserPage flex justify-center mt-20">
+        <div className="user-box flex flex-col">
           <div>
-            <img src={responseData.avatar} alt='' />
+            <img src={responseData.avatar} alt="" />
           </div>
-          <div className='flex flex-row'>
-            <p className='p-1'>{responseData.first_name}</p>
-            <p className='p-1'>{responseData.last_name}</p>
+          <div className="flex flex-row self-center">
+            <p className="p-1">{responseData.first_name}</p>
+            <p className="p-1">{responseData.last_name}</p>
           </div>
           <p>{responseData.email}</p>
         </div>

@@ -24,9 +24,9 @@ const UsersPage = () => {
                   <div className="image-wrapper">
                     <img className="" key={person.avatar} src={person.avatar} alt="" />
                   </div>
-                  <div className="flex flex-row text-center">
+                  <div className="flex flex-row self-center">
                     <p className="p-1">{person.first_name} </p>
-                    <p className="p-1">{person.last_name}</p>
+                    {/* <p className="p-1">{person.last_name}</p> */}
                   </div>
                 </div>
               </Link>
