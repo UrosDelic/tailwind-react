@@ -4,11 +4,11 @@ import "../../index.css";
 import "./LoginForm.css";
 import Dinput from "../../dynamicComponents/Dinput";
 import Navbar from "../Navbar/Navbar";
-import { Link, Redirect } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import getData from "../../AxiosClient/GetData";
 import auth from "../protectedRoute/Auth.js";
 
-const LoginForm = (props) => {
+const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [infoText, setInfoText] = useState("");
@@ -20,6 +20,9 @@ const LoginForm = (props) => {
   const passwordHandleChange = (event) => {
     setPassword(event.target.value);
   };
+
+  const history = useHistory();
+
   const postInputData = () => {
     const obj = { email, password };
     getData
@@ -28,9 +31,9 @@ const LoginForm = (props) => {
         if (response.status < 300) {
           setInfoText("Success!");
           setLoggedIn(true);
-          // auth.login(() => {
-          //   props.history.push("/testPage");
-          // });
+          auth.login(() => {
+            history.push("/users");
+          });
         }
       })
       .catch((error) => {
@@ -40,47 +43,41 @@ const LoginForm = (props) => {
       });
   };
 
-  // const showInfo = () => {
-  //   if (infoText === "") {
-  //     return ``;
-  //   } else return infoText;
-  // };
-
   return (
-    <div className="playground-container">
+    <div className='playground-container'>
       <Navbar></Navbar>
-      <div className="loginForm-container p-3 w-2/3 md:w-1/2 xl:w-1/4">
-        <h1 className="heading text-center md:text-left mb-2 md:mb-8 xl:mb-8">
+      <div className='loginForm-container p-3 w-2/3 md:w-1/2 xl:w-1/4'>
+        <h1 className='heading text-center md:text-left mb-2 md:mb-8 xl:mb-8'>
           Ajax - Node.js in React
         </h1>
-        <div className="inputs-container items-center md:items-start xl:items-start md:ml-5 mt-5 md:mt-20 xl:mt-20 mb-5 flex flex-col xl:ml-5">
-          <label className="label mb-1" htmlFor="email">
+        <div className='inputs-container items-center md:items-start xl:items-start md:ml-5 mt-5 md:mt-20 xl:mt-20 mb-5 flex flex-col xl:ml-5'>
+          <label className='label mb-1' htmlFor='email'>
             Email:
           </label>
           <Dinput
-            className="w-2/3 md:w-1/2 xl:w-1/2"
-            type="text"
-            id="emailField"
+            className='w-2/3 md:w-1/2 xl:w-1/2'
+            type='text'
+            id='emailField'
             value={email}
             onChange={emailHandleChange}
           />
-          <label className="label mt-5 mb-1" htmlFor="password">
+          <label className='label mt-5 mb-1' htmlFor='password'>
             Password:
           </label>
           <Dinput
-            className="w-2/3 md:w-1/2 xl:w-1/2"
-            type="password"
-            id="passwordField"
+            className='w-2/3 md:w-1/2 xl:w-1/2'
+            type='password'
+            id='passwordField'
             value={password}
             onChange={passwordHandleChange}
           />
         </div>
-        <div className="flex flex-col items-center md:items-start xl:items-start xl:ml-5 md:ml-5">
-          <div className="signup-label">
-            <Link to="/signup" className="">
+        <div className='flex flex-col items-center md:items-start xl:items-start xl:ml-5 md:ml-5'>
+          <div className='signup-label'>
+            <Link to='/signup' className=''>
               <label
-                className="italic hover:underline cursor-pointer font-extralight text-xs md:text-sm"
-                htmlFor="signup"
+                className='italic hover:underline cursor-pointer font-extralight text-xs md:text-sm'
+                htmlFor='signup'
               >
                 Don't have an account? Sign up!
               </label>
@@ -88,16 +85,12 @@ const LoginForm = (props) => {
           </div>
           <button
             disabled={!password || !email}
-            className="post-button mt-5 transition duration-500 transform hover:-translate-y-1 hover:scale-100 w-2/5  font-bold"
-            id="btn-post-data"
+            className='post-button mt-5 transition duration-500 transform hover:-translate-y-1 hover:scale-100 w-2/5  font-bold'
+            id='btn-post-data'
             onClick={postInputData}
-            text-on-hover="Type in your credentials"
+            text-on-hover='Type in your credentials'
           >
-            <span className="span-post-btn mt-5">Log In</span>
-            {loggedIn ? <Redirect to="/users" /> : null}
-          </button>
-          <button onClick={postInputData} className="m-5">
-            test submit
+            <span className='span-post-btn mt-5'>Log In</span>
           </button>
 
           <p className={!loggedIn ? "text-red-500 mt-3 italic" : "text-green-500 mt-3 italic"}>
