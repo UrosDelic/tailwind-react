@@ -7,6 +7,8 @@ import { Link, useHistory } from "react-router-dom";
 import getData from "../../AxiosClient/GetData";
 import auth from "../protectedRoute/Auth.js";
 
+///////// https://formik.org/docs/guides/validation //////////////
+
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
