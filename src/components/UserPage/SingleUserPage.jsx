@@ -16,7 +16,7 @@ const SingleUserPage = () => {
   } else
     return (
       <div className="UserPage flex justify-center mt-20">
-        <div className="user-box flex flex-col">
+        <div className="user-box items-center flex flex-col">
           <div>
             <img src={responseData.avatar} alt="" />
           </div>
