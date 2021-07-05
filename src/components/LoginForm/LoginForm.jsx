@@ -3,7 +3,6 @@ import { useState } from "react";
 import "../../index.css";
 import "./LoginForm.css";
 import Dinput from "../../dynamicComponents/Dinput";
-import Navbar from "../Navbar/Navbar";
 import { Link, useHistory } from "react-router-dom";
 import getData from "../../AxiosClient/GetData";
 import auth from "../protectedRoute/Auth.js";
@@ -47,7 +46,6 @@ const LoginForm = () => {
 
   return (
     <div className='playground-container'>
-      <Navbar></Navbar>
       <div className='loginForm-container p-3 w-2/3 md:w-1/2 xl:w-1/4'>
         <h1 className='heading text-center md:text-left mb-2 md:mb-8 xl:mb-8'>
           Ajax - Node.js in React

@@ -6,11 +6,12 @@ import SignUpForm from "./components/Signup/SignUpForm.jsx";
 import UsersPage from "./components/UsersPage/UsersPage";
 import SingleUserPage from "./components/UserPage/SingleUserPage";
 import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
-
+import Navbar from "./components/Navbar/Navbar";
 const App = () => {
   return (
     <div>
       <Router>
+        <Navbar />
         <Switch>
           <Route exact path='/'>
             <LoginForm></LoginForm>
