@@ -29,11 +29,13 @@ const LoginForm = () => {
       .postLoginData(obj)
       .then((response) => {
         if (response.status < 300) {
-          setInfoText("Success!");
           setLoggedIn(true);
-          auth.login(() => {
-            history.push("/users");
-          });
+          setInfoText("Success!");
+          setTimeout(() => {
+            auth.login(() => {
+              history.push("/users");
+            });
+          }, 1000);
         }
       })
       .catch((error) => {
