@@ -1,33 +1,38 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useAxiosGet from "../AxiosCustomHook/useAxios";
+import auth from "../protectedRoute/Auth";
+import LoginForm from "../LoginForm/LoginForm";
 
 const SingleUserPage = () => {
   const { id } = useParams();
   const { responseData, isLoading } = useAxiosGet(`https://reqres.in/api/users/${id}`);
 
-  if (!isLoading) {
-    return <div>Loading</div>;
-  }
+  // if (!isLoading) {
+  //   return <div>Loading</div>;
+  // }
   if (responseData.length < 1) {
     return (
-      <p className="w-screen h-screen text-3xl text-center mt-20">User by ID - {id} is missing</p>
+      <p className='w-screen h-screen text-3xl text-center mt-20'>User by ID - {id} is missing</p>
     );
-  } else
+  } else if (auth.isAuthenticated() === null) {
+    return <LoginForm></LoginForm>;
+  } else if (auth.isAuthenticated()) {
     return (
-      <div className="UserPage flex justify-center mt-20">
-        <div className="user-box items-center flex flex-col">
+      <div className='UserPage flex justify-center mt-20'>
+        <div className='user-box items-center flex flex-col'>
           <div>
-            <img src={responseData.avatar} alt="" />
+            <img src={responseData.avatar} alt='' />
           </div>
-          <div className="flex flex-row self-center">
-            <p className="p-1">{responseData.first_name}</p>
-            <p className="p-1">{responseData.last_name}</p>
+          <div className='flex flex-row self-center'>
+            <p className='p-1'>{responseData.first_name}</p>
+            <p className='p-1'>{responseData.last_name}</p>
           </div>
           <p>{responseData.email}</p>
         </div>
       </div>
     );
+  }
 };
 
 export default SingleUserPage;
