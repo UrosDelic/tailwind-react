@@ -1,23 +1,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useAxiosGet from "../AxiosCustomHook/useAxios";
-import auth from "../protectedRoute/Auth";
-import LoginForm from "../LoginForm/LoginForm";
 
 const SingleUserPage = () => {
   const { id } = useParams();
   const { responseData, isLoading } = useAxiosGet(`https://reqres.in/api/users/${id}`);
 
-  // if (!isLoading) {
-  //   return <div>Loading</div>;
-  // }
   if (responseData.length < 1) {
     return (
       <p className='w-screen h-screen text-3xl text-center mt-20'>User by ID - {id} is missing</p>
     );
-  } else if (auth.isAuthenticated() === null) {
-    return <LoginForm></LoginForm>;
-  } else if (auth.isAuthenticated()) {
+  } else if (!isLoading) {
+    return <div>Loading....</div>;
+  } else
     return (
       <div className='UserPage flex justify-center mt-20'>
         <div className='user-box items-center flex flex-col'>
@@ -32,7 +27,6 @@ const SingleUserPage = () => {
         </div>
       </div>
     );
-  }
 };
 
 export default SingleUserPage;
