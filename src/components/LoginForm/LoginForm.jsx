@@ -46,7 +46,7 @@ const LoginForm = () => {
 
   return (
     <div className='playground-container'>
-      <div className='loginForm-container p-3 w-2/3 md:w-1/2 xl:w-1/4'>
+      <div className='loginForm-container p-3 w-4/5 md:w-1/2 xl:w-1/4'>
         <h1 className='heading text-center md:text-left mb-2 md:mb-8 xl:mb-8'>
           Ajax - Node.js in React
         </h1>
@@ -55,8 +55,8 @@ const LoginForm = () => {
             placeholder={"Email"}
             className={
               loggedIn === false
-                ? "border-red-600 w-2/3 md:w-1/2 xl:w-3/5 text-red-600 mb-10"
-                : "w-2/3 md:w-1/2 xl:w-3/5 mb-10"
+                ? "border-red-600 w-5/5 md:w-1/2 xl:w-3/5 text-red-600 mb-10"
+                : "w-5/5 md:w-1/2 xl:w-3/5 mb-10"
             }
             type='text'
             id='emailField'
@@ -67,8 +67,8 @@ const LoginForm = () => {
             placeholder={"Password"}
             className={
               loggedIn === false
-                ? "border-red-600 w-2/3 md:w-1/2 xl:w-3/5 text-red-600"
-                : "w-2/3 md:w-1/2 xl:w-3/5"
+                ? "border-red-600 w-5/5 md:w-1/2 xl:w-3/5 text-red-600"
+                : "w-5/5 md:w-1/2 xl:w-3/5"
             }
             type='password'
             id='passwordField'
@@ -89,7 +89,7 @@ const LoginForm = () => {
           </div>
           <button
             disabled={!password || !email}
-            className='post-button mt-5 transition duration-500 transform hover:-translate-y-1 hover:scale-100 w-2/5  font-bold'
+            className='post-button mt-5 transition duration-500 transform hover:-translate-y-1 hover:scale-100 w-64 md:w-1/2 xl:w-3/5 font-bold'
             id='btn-post-data'
             onClick={postInputData}
             text-on-hover='Type in your credentials'
