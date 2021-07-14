@@ -39,28 +39,30 @@ const Playground = () => {
       </div>
       <div className='signup flex justify-center mt-20'>
         <div className='flex flex-col md:w-2/7 xl:w-1/5'>
-          <label htmlFor=''>Email:</label>
           <Dinput
-            className='signup-email-input mb-5'
+            className='signup-email-input mb-10'
             id='signupEmail'
             value={email}
             onChange={signupEmailHandleChange}
+            placeholder={"email"}
           ></Dinput>
-          <label htmlFor=''>Password:</label>
+
           <Dinput
-            className='signup-password-input mb-5 '
+            className='signup-password-input mb-10'
             id='signupPassword'
             type='password'
             value={password}
             onChange={signupPasswordHandleChange}
+            placeholder={"password"}
           ></Dinput>
-          <label htmlFor=''>Confirm password:</label>
+
           <Dinput
-            className='signup-repeat-password mb-5'
+            className='signup-repeat-password mb-10'
             id='signupRepeatPassword'
             type='password'
             value={repeatPassword}
             onChange={repeatPasswordHandleChange}
+            placeholder={"repeat password"}
           ></Dinput>
           <button
             disabled={!password || !repeatPassword || password !== repeatPassword}

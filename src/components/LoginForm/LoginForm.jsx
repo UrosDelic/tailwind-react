@@ -51,33 +51,23 @@ const LoginForm = () => {
           Ajax - Node.js in React
         </h1>
         <div className='inputs-container items-center md:items-start xl:items-start md:ml-5 mt-5 md:mt-20 xl:mt-20 mb-5 flex flex-col xl:ml-5'>
-          <label
-            className={loggedIn === false ? "text-red-600 label mb-1" : "label mb-1"}
-            htmlFor='email'
-          >
-            Email:
-          </label>
           <Dinput
+            placeholder={"Email"}
             className={
               loggedIn === false
-                ? "border-red-600 w-2/3 md:w-1/2 xl:w-3/5"
-                : "w-2/3 md:w-1/2 xl:w-3/5"
+                ? "border-red-600 w-2/3 md:w-1/2 xl:w-3/5 text-red-600 mb-10"
+                : "w-2/3 md:w-1/2 xl:w-3/5 mb-10"
             }
             type='text'
             id='emailField'
             value={email}
             onChange={emailHandleChange}
           />
-          <label
-            className={loggedIn === false ? "text-red-600 label mt-3 mb-1" : "label mb-1 mt-3"}
-            htmlFor='password'
-          >
-            Password:
-          </label>
           <Dinput
+            placeholder={"Password"}
             className={
               loggedIn === false
-                ? "border-red-600 w-2/3 md:w-1/2 xl:w-3/5"
+                ? "border-red-600 w-2/3 md:w-1/2 xl:w-3/5 text-red-600"
                 : "w-2/3 md:w-1/2 xl:w-3/5"
             }
             type='password'

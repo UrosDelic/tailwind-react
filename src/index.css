@@ -12,13 +12,22 @@ label {
   font-size: 1rem;
   font-weight: bold;
 }
+
 input {
-  /* max-width:%; */
-  /* min-width: 20vh; */
   background: transparent;
   border: 0px;
   border-bottom: 2px solid #96ca3a;
+  outline: none;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #96ca3a !important;
+}
+
 textArea {
   font-weight: bolder;
   background: transparent;
@@ -27,16 +36,15 @@ textArea {
   resize: vertical;
   min-height: 5em;
   max-height: 16.3em;
-  /* max-width: 50vh; */
   min-width: 25vh;
 }
+
 button {
   padding: 2px !important;
   color: #96ca3a !important;
   background-color: black !important ;
   border-radius: 5px;
   font-family: "Montserrat", sans-serif;
-  border-color: black;
   box-shadow: 0 0 10px #96ca3a;
   max-width: 10rem;
 }
@@ -47,9 +55,11 @@ button:enabled:hover {
 }
 
 button:disabled:hover {
+  box-shadow: 0 0 10px red !important;
   background-color: red !important;
 }
 .signup-button:disabled {
+  box-shadow: 0 0 10px red !important;
   color: white !important;
   background-color: red !important;
 }
